@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复制和填充</title>
+</head>
+<body>
+  <script>
+    // var arr = [1,2,3];
+    // console.log(arr.copyWithin());
+
+    // const zeros = [0,0,0,0,0];
+    // zeros.fill(5);
+    // console.log(zeros);
+    // zeros.fill(0);
+    // console.log(zeros);
+
+    let ints,reset = ()=>ints = [0,1,2,3,4,5,6,7,8,9];
+    reset();
+    console.log(ints.copyWithin(5))
+    console.log(ints);
+
+    console.log(reset());
+    //从ints中复制索引5开始的内容，插入到索引0开始的位置
+    ints.copyWithin(0,5);
+</script>
+</body>
+</html>

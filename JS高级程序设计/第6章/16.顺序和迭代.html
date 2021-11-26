@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顺序和迭代</title>
+</head>
+<body>
+  <script>
+    // const m = new Map([
+    //   ["key1","val1"],
+    //   ["key2","val2"],
+    //   ["key3","val3"]
+    // ])
+    // console.log(m.entries === m[Symbol.iterator])
+    // console.log(...m)
+
+    const m1 = new Map([
+      ["key1","vall"]
+    ]);
+
+    for(let key of m1.keys()){
+      key = "newKey";
+      console.log(key);
+      console.log(m1.get("key1"))
+      console.log(m1.get("newKey"))
+    }
+    console.log("---------------------------------")
+    const keyObj =  {obj:1}
+    const m = new Map([
+      [keyObj,"vall"]
+    ])
+    for(let key of m.keys()){
+      key.id = "newKay";
+      console.log(key)
+      console.log(m.get(keyObj))
+    }
+    console.log(keyObj)
+    console.log(m.get(keyObj))
+  </script>
+  
+</body>
+</html>

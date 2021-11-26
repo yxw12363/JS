@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>函数拥有多个长辈</title>
+</head>
+<body>
+  <script>
+
+    // let xw = new Object();
+    // xw.showName  = '小伟';
+    // Object.prototype.show = function(){
+    //   console.log('xiaowei')
+    // }
+    // xw.show();
+    // function user(){
+      
+    // }
+    // user.__proto__.show = function(){
+    //   console.log('这是对象的方法')
+    // }
+    // console.log(user.show())
+    // console.dir(user)
+    // console.log('1',user.prototype.__proto__)
+    // console.log('2',user.__proto__.__proto__)
+    // console.dir(Object.prototype)
+
+    function User(){}
+
+    User.prototype.show=  function(){
+      console.log('杨晓伟')
+    }
+    let yxw = new User();
+
+    console.log(User.prototype == yxw.__proto__)
+
+    // let obj = {};
+    // console.log(Object.getPrototypeOf(obj).constructor)
+
+    // function user(name){
+    //   this.name = name;
+    // }
+    // user.prototype = {
+    //   constructor:user,
+    //   show(){
+    //     console.log(this.name)
+    //   }
+    // }
+    // console.dir(user.prototype.constructor)
+    // console.dir(user)
+
+    // let lisi = new user.prototype.constructor('李四');
+    // lisi.show()
+
+    // let arr = [];
+    // console.log(arr)
+    // console.log(Object)
+    // console.log(arr.__proto__.__proto__ === Object.prototype )
+</script>
+</body>
+</html>

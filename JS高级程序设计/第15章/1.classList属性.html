@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList属性</title>
+</head>
+<body>
+  <div class="bd user disabled">你好</div>
+  <script>
+    //要删除"user"类
+    let targetClass = "user";
+    //把类名拆成数组
+    let divs = document.getElementsByClassName('bd');
+    console.log(divs)
+    console.log(divs[0].className.split(/\s+/))
+    let classNames = divs[0].className.split(/\s+/);
+    
+    //找到要删除类名的索引
+    let idx = classNames.indexOf(targetClass);
+    //如果有则删除
+    // if(idx>-1){
+    //   classNames.splice(i,1)
+    // }
+    //重新设置类名
+    // divs.className = className.join();
+   
+  </script>
+</body>
+</html>

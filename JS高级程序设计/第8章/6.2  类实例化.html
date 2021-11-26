@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类实例化</title>
+</head>
+<body>
+  <script>
+    class Person{
+      constructor(name){
+        console.log(arguments.length);
+        this.name = name || null;
+      }
+    }
+
+    let p1 = new Person();
+    console.log(p1.name);
+
+    let p2 = new Person();
+    console.log(p2.name);
+
+    let p3 = new Person("jack");
+    console.log(p3.name);
+  </script>
+</body>
+</html>

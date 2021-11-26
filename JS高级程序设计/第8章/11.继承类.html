@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>继承类</title>
+</head>
+<body>
+  <script>
+    class Vehicle{
+      identifyPrototype(id){
+        console.log(id,this);
+      }
+      static identifyClass(id){
+        console.log(id,this);
+      }
+    }
+
+    class Bus extends Vehicle{}
+    let v = new Vehicle();
+    let b= new Bus();
+    b.identifyPrototype('bus');
+    v.identifyPrototype('vehicle');
+  </script>
+</body>
+</html>

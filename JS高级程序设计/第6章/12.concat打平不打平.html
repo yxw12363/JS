@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let colors = ["red","green","blue"];
+    let newColors = ["black","brown"];
+    newColors[Symbol.isConcatSpreadable] = false;
+    //强制不打平数组
+    let colors2 = colors.concat("yellow",newColors);
+    console.log(colors2) 
+    //强制打平类数组对象
+    let moreNewColors = {
+      [Symbol.isConcatSpreadable]:true,
+      length:2,
+      0:"pink",
+      1:"cyan"
+    }
+    let colors3 = colors.concat(moreNewColors)
+    console.log(colors3)
+  </script>
+</body>
+</html>

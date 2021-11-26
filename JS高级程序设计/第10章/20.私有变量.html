@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私有变量</title>
+</head>
+<body>
+  <script>
+      function MyObject(){
+        //私有变量和私有函数
+        let privateVariable = 10;
+        function privateFunction(){
+          return false;
+        }
+        console.log(this)
+        //特权方法
+        this.publicMethod = function(){
+          
+          privateVariable++;
+          privateFunction();
+        }
+      }
+    
+    console.log(MyObject())
+    var a = new MyObject();
+    console.log("1",a.publicMethod());
+  </script>
+</body>
+</html>

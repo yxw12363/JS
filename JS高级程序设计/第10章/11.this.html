@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this</title>
+</head>
+<body>
+  <script>
+    function King(){
+      this.reyaltyName = 'Henry';
+      //this引用King的实例
+      setTimeout(()=>console.log(this.reyaltyName),1000)
+    }
+
+    function Queen(){
+      this.reyaltyName = 'Elizabeth';
+      //this引用King的实例
+      setTimeout(function(){console.log(this.reyaltyName);},1000)
+    }
+    new King();        //Henry
+    new Queen();
+    function yxw(){
+    }
+
+    const a = yxw();
+    console.log(a)
+  </script>
+</body>
+</html>

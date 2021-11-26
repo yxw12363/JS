@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise</title>
+</head>
+<body>
+  <script>
+    // let p1  = Promise.all([
+    //   Promise.resolve(),
+    //   Promise.resolve()
+    // ]);
+    // console.log(p1)
+    // //可迭代对象中的元素会通过Promise.resolve()转换为期约
+    // let p2 = Promise.all([3,4]);
+    // console.log(p2)
+
+    // //空的可迭代对象等价于Promise.resolve()
+    // let p3 = Promise.all([]);
+    // console.log(p3)
+
+    // //无效的语句
+    // // let p4 = Promise.all();
+
+    
+    // let p1 = Promise.all([new Promise(()=>{})])
+    // console.log(p1)     //Promise <pending>
+    
+
+
+    let p = Promise.all([
+      Promise.resolve(3),
+      Promise.resolve(),
+      Promise.resolve(4)
+    ]);
+    p.then((values)=>setTimeout(console.log,0,values));
+
+  </script>
+</body>
+</html>

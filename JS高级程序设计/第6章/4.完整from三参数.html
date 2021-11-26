@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>from</title>
+</head>
+<body>
+  <script>
+    const a1 = [1,2,3,4];
+    const a2 = Array.from(a1,x=>x**2);
+    const a3 = Array.from(a1,function(x){return x**this.exponent},{exponent:3})
+    console.log(a2)
+    console.log(a3)
+  </script>
+</body>
+</html>

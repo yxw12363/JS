@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>懒加载</title>
+</head>
+<style>
+  p{
+    border: 2px solid red;
+  }
+  img{
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    margin-bottom: 50px;
+  }
+</style>
+<body>
+  <p><img src="./images/1.jpg" data-original="./images/1.jpg" /></p>
+  <p><img src="./images/1.jpg" data-original="./images/1.jpg" /></p>
+  <p><img src="./images/1.jpg" data-original="./images/1.jpg" /></p>
+  <p><img src="./images/1.jpg" data-original="./images/1.jpg" /></p>
+  <p><img src="./images/1.jpg" data-original="./images/1.jpg" /></p>
+  <p><img src="./images/yxw.png" data-original="./images/yxw.png" /></p>
+  <p><img src="./images/yxw.png" data-original="./images/yxw.png" /></p>
+  <p><img src="./images/yxw.png" data-original="./images/yxw.png" /></p>
+  <p><img src="./images/yxw.png" data-original="./images/yxw.png" /></p>
+  <p><img src="./images/yxw.png" data-original="./images/yxw.png" /></p>
+  <p><img src="./images/yxw.png" data-original="./images/yxw.png" /></p>
+
+  <script>
+    var wHeight = document.documentElement.clientHeight;//获取屏幕可视高度
+    var imgs = document.querySelectorAll("img");
+    imgs.forEach(function(item,idx){
+      //获取当前图片在文档中的位置
+      var ownHeight = item.getBoundingClientRect().top;
+      if(ownHeight<=wHeight){
+        item.src = item.getAttribute("data-original");
+      }
+    })
+
+    //获取屏幕滚动事件
+    window.onscroll = function(){
+      imgs.forEach(function(item,idx){
+        //获取屏幕已滚动高度
+        var hasScrollTop = window.scrollY;
+        //获取当前图片在文档中的位置
+        var  ownHeight=item.getBoundingClientRect().top;
+        console.log(hasScrollTop);
+        if(ownHeight<=(hasSorollTop+wHeight)){
+        //当图片在屏幕滚动时，当图片在文档中的位
+        //置小于屏幕已滚动高度+屏幕可视高度的时加载此图片，
+        item.src=item.getAttribute("data-original")
+        }
+      })
+    }
+  </script>
+</body>
+</html>

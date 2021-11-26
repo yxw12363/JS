@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分辨率</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .yxw{
+    width: 1300px;
+    height: 200px;
+    background-color: violet;
+  }
+</style>
+<body>
+  <div class="yxw">1</div>
+  
+  <script>
+    window.onload = function(){
+      var clientWidth = document.body.clientWidth;
+      var clientHeight = document.body.clientHeight;
+      console.log(clientWidth,clientHeight);
+
+      var offsetWidth = document.body.offsetWidth;
+      var offsetHeight = document.body.offsetHeight;
+      console.log(offsetWidth,offsetHeight)
+
+      var height = window.screen.height;
+      var width = window.screen.width;
+      console.log(width,height)
+    }
+  </script>
+</body>
+</html>

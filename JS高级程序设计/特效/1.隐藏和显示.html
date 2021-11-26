@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐藏和显示</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  img{
+    width: 200px;
+    height:200px ;
+  }
+</style>
+<body>
+  <button id='btn'>隐藏</button>
+  <br/>
+  <img src="./images/1.jpg" id="img" />
+  <script>
+    //1.获取源对象
+    var btn = document.getElementById('btn');
+    var img = document.getElementById('img');
+    //2.绑定点击事件
+    btn.onclick = function(){
+      //3.事件处理
+      if(btn.innerHTML==='显示'){
+        img.style.display='block';  
+        btn.innerHTML = '隐藏';
+      }else{
+        img.style.display='none';
+        btn.innerHTML = '显示';
+      }
+      
+      
+      
+    }
+  </script>
+</body>
+</html>

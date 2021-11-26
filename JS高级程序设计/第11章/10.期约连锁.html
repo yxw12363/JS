@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>期约连锁</title>
+</head>
+<body>
+  <script>
+    // let p = new Promise((resolve,reject)=>{
+    // console.log('first');
+    // resolve();
+    // });
+    // p.then(()=>console.log('second'))
+    // .then(()=>console.log('third'))
+    // .then(()=>console.log('fourth'))
+
+    // (()=>console.log('first'))();
+    // (()=>console.log('second'))();
+    // (()=>console.log('third'))();
+    // (()=>console.log('fourth'))();
+
+    // let p1 = new Promise((resolve,reject)=>{
+    //   console.log('p1 executor');
+    //   setTimeout(resolve,1000);
+    // });
+    // p1.then(()=>new Promise((resolve,reject)=>{
+    //   console.log('p2 executor');
+    //   setTimeout(resolve,1000);
+    // }))
+    // .then(()=>new Promise((resolve,reject)=>{
+    //   console.log('p3 executor');
+    //   setTimeout(resolve,1000);
+    // }))
+    // .then(()=>new Promise((resolve,reject)=>{
+    //   console.log('p4 executor');
+    //   setTimeout(resolve,1000);
+    // }))
+
+    // //提取到一个工厂函数中，
+    // function delayedResolve(str){
+    //   return new Promise((resolve,reject)=>{
+    //     console.log(str);
+    //     setTimeout(resolve,1000)
+    //   });
+    // }
+    // delayedResolve('p1 executor')
+    //   .then(()=>delayedResolve('p2 executor'))
+    //   .then(()=>delayedResolve('p3 executor'))
+    //   .then(()=>delayedResolve('p4 executor'))
+
+    // function delayedResolve(str,callback=null){
+    //   setTimeout(()=>{
+    //     console.log(str);
+    //     callback && callback();
+    //   },1000)
+    // }
+    // delayedResolve('p1 callback',()=>{
+    //   delayedResolve('p2 callback',()=>{
+    //     delayedResolve('p3 callback',()=>{
+    //       delayedResolve('p4 callback');
+    //     })
+    //   })
+    // })
+
+    let p = new Promise((resolve,reject)=>{
+      console.log('initial promise rejects');
+      reject();
+    });
+    console.log(p)
+
+    p.catch(()=>console.log('reject handler'))
+      .then(()=>console.log('resolve handler'))
+      .finally(()=>console.log('finally handler'))
+    
+    </script>
+</body>
+</html>

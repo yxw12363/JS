@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类表达式</title>
+</head>
+<body>
+  <script>
+    let Person = class PersonName{
+      identify(){
+        console.log(Person.name,PersonName.name)
+      }
+    }
+
+    let p = new Person();
+    p.identify();
+    console.log(p.identify());
+    console.log(Person.name);
+    console.log(PersonName)
+  </script>
+  
+</body>
+</html>

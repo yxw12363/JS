@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>失败处理</title>
+</head>
+<body>
+  <script>
+function double(vlaue,success,failure){
+  setTimeout(()=>{
+    try{
+      if(typeof vlaue!=="number"){
+        throw `Must provide number as first argument`;
+      }
+      success(2*vlaue)
+    }catch(e){
+      failure(e)
+    }
+  },1000)
+}
+const successCallback = (x)=>console.log(`Success:${x}`)
+const failureCallback = (e)=>console.log(`Failure:${e}`)
+double(3,successCallback,failureCallback)
+  </script>
+</body>
+</html>

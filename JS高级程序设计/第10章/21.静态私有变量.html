@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>静态私有变量</title>
+</head>
+<body>
+  <script>
+    (function(){
+      //私有变量和私有函数
+      let privateVariable = 10;
+      function privateFunction(){
+        return false;
+      }
+      //构造函数
+      MyObject = function(){}
+      //共有和特权方法
+      MyObject.prototype.oublicMethod = function(){
+        privateVariable++;
+        return privateFunction();
+      };
+    })();
+  </script>
+</body>
+</html>

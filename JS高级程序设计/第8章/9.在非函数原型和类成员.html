@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>非函数成员</title>
+</head>
+<body>
+  <script>
+    class Person{
+      sayName(){
+        console.log(`${Person.greeting} ${this.name}`)
+      }
+    }
+    //在类上定义数据成员
+    Person.greeting = 'My name is';
+    //在原型上定义数据成员
+    Person.prototype.name = 'Jake';
+
+    let p = new Person();
+    console.log(Person)
+    console.log(p)
+    p.sayName();
+  </script>
+  
+</body>
+</html>

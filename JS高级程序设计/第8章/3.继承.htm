@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>继承</title>
+</head>
+<body>
+  <script>
+    /* 如果原型是另一个类型的实例呢？意味着这个原型本身有一个内部指针指向另一个原型，相应地另一个原型也有一个指针指向另一个构造函数 */
+    function SuperType(){
+      this.property = true;
+    }
+
+    SuperType.prototype.getSuperValue = function(){
+      return this.property;
+    };
+
+    function SubType(){
+      this.subproperty = false;
+    }
+
+    SubType.prototype.getSubValue = function(){
+      return this.subproperty;
+    }
+
+    //继承SuperType
+    SubType.prototype = new SuperType();
+
+    let instance = new SubType();
+    console.log(instance.subproperty);
+    console.log(instance.getSuperValue())
+    
+
+  </script>
+  
+</body>
+</html>

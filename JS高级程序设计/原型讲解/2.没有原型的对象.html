@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>没有原型的对象</title>
+</head>
+<body>
+  <script>
+    // let xw = {name:'晓伟'};
+    // console.log(xw);
+    // console.log(xw.hasOwnProperty('name'))
+    
+    let obj1 = {}
+
+    /**这是因为这个对象原型压根就没有这个方法*/
+    let yxw = Object.create(obj1,{
+      name:{
+        value:'杨晓伟'
+      }
+    })
+
+    console.log(yxw.__proto__)
+    // console.log(yxw.hasOwnProperty('name'));
+
+    /**对象优先级比原型方法优先级高*/
+
+    /**只有构造函数才有.prototype的属性，对象是没有这个属性的，__proto__ 只是浏览器提供的非标准化的访问对象的构造函数的原型对象的一种方式，其实更标准的是这样 Object.getPrototypeOf( a ) 获取 a 对象的原型对象，因为对象是没有.prototype的，实际上获取的是 a.__proto__.prototype*/
+
+    /**系统构造原型的体现*/
+
+    // function User(){    }
+    // console.dir(User);
+    // console.log(User.prototype.__proto__)
+
+    
+  </script>
+</body>
+</html>

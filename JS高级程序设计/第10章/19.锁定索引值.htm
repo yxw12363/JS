@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>锁定索引值</title>
+</head>
+<body>
+  <div>1</div>
+  <hr/>
+  <div>2</div>
+  <hr/>
+  <div>3</div>
+  <hr/>
+  <div>1</div>
+  <script>
+    let divs = document.querySelectorAll('div');
+    // for(var i=0;i<divs.length;++i){
+    //   divs[i].addEventListener('click',(function(frozenCounter){
+    //     return function(){
+    //       console.log(frozenCounter)
+    //     };
+    //   })(i));
+    // }
+
+    let i;
+    for(i=0;i<divs.length;++i){
+      divs[i].addEventListener('click',function(){
+        console.log(i);
+      })
+    }
+  </script>
+</body>
+</html>

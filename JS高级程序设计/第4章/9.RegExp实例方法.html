@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegExp</title>
+</head>
+<body>
+  <script>
+    let text = "mom and dad and baby";
+    let pattern = /mom( and dad( and baby)?)?/gi;
+    let matches = pattern.exec(text);
+    console.log(matches.index);
+    console.log(matches.input);
+    console.log(matches[0]);
+    console.log(matches[1]);
+    console.log(matches[2]);
+  </script>
+</body>
+</html>

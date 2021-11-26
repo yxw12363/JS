@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>find</title>
+</head>
+<body>
+  <script>
+    const people = [
+      {
+        name:'Matt',
+        age:27
+      },
+      {
+        name:'yxw',
+        age:25
+      }
+    ]
+    const filterObj = people.find((element,index,people)=>element.age<26);
+    console.log(filterObj)
+
+    const evens = [2,4,6];
+    evens.find((element,index,evens)=>{
+      console.log(evens)
+    })
+  </script>
+</body>
+</html>

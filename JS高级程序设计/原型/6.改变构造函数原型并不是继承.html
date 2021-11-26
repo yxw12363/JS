@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>改变构造函数原型并不是继承</title>
+</head>
+<body>
+  <button class="yxw" message="xw">我是谁</button>
+  <button message="xw">xw</button>
+  <button message="ws">ws</button>
+  <script>
+
+      // function User(){
+      // }
+
+      // User.prototype.name = function(){
+      //   console.log(user.name);
+      // }
+
+      // let hd = new User();
+      // console.log(hd);
+
+      // function Admin(){}
+      // /**改变原型*/
+      // Admin.prototype= Object.create(User.prototype);
+      // Admin.prototype.constructor = Admin;
+      // console.log('1',Object.getOwnPropertyDescriptors(Admin.prototype))
+
+      // Object.defineProperty(Admin.prototype,"constructor",{
+      //   value:Admin,
+      //   enumerable:false
+      // });
+      // console.log('2',Object.getOwnPropertyDescriptors(Admin.prototype))
+
+      // Admin.prototype.role = function(){
+      //   console.log('admin.role')
+      // }
+
+      // let a = new Admin();
+      // //in会找原型链
+      // for(const key in a){
+      //   console.log(key)
+      // }
+    
+
+   
+
+      // let admin = new Admin();
+      // admin.role();
+      
+
+      // function Member(){}
+      // Member.prototype = User.prototype;
+      // Member.prototype.role = function(){
+      //   console.log('member.role')
+      // }
+
+      // let member = new Member();
+      // member.role();
+
+      // admin.role()
+
+      // function Admin(){}
+      // let a = new Admin();
+      // a.role();
+      // Admin.prototype= Object.create(User.prototype);
+      // Admin.prototype.role = function(){
+      //   console.log('admin.role')
+      // }
+
+      // function User(){}
+      // console.dir(User)
+      // let obj = new User();
+      // console.log(obj.__proto__.constructor === User)
+
+      // let obj2 = obj.__proto__.constructor;
+      // console.dir(obj2)
+
+      // function User(){}
+      // User.prototype.show = function(){
+      //   console.log("user name");
+      // }
+      // User.prototype.site = function(){
+      //   return 'yxw';
+      // }
+
+      // function Admin(){}
+      // Admin.prototype = Object.create(User.prototype);
+      // Admin.prototype.constructor = Admin;
+      // Admin.prototype.show = function(){
+      //   console.log(User.prototype.site()+"Admin show")
+      // }
+
+      // let hd = new Admin();
+      // hd.show();
+      
+
+      // let xw = new Object();
+      // xw.name = '晓伟';
+      // Object.prototype.show = function(){
+      //   console.log('xw.com')
+      // }
+
+      // function User(){}
+      // console.dir(User)
+      // console.log(User.prototype.__proto__ === Object.prototype);
+      // console.log(User.__proto__.__proto__ === Object.prototype)
+      // console.log(User.prototype.__proto__ === User.__proto__.__proto__)
+
+      // let str = '';
+      // console.log(str.__proto__ === String.prototype);
+      // console.log(String.prototype.__proto__ === Object.prototype)
+
+      /**对象的原型 === 对象的原型*/
+      
+      // User.prototype = {
+      //   show(){
+      //     console.log(this.name);
+      //   }
+      // }
+      // // console.dir(User);
+
+      // let lisi = new User.prototype.constructor();
+      // lisi.show();
+
+      // function User(name){
+      //   this.name = name;
+      // }
+
+      // let xw = new User("晓伟")
+      // // console.log(xw);
+      // function createByObject(obj,...args){
+      //   const constructor =  Object.getPrototypeOf(obj).constructor;
+      // //  console.log(Object.getPrototypeOf(obj).constructor);
+      //   return new constructor(...args)
+      // }
+
+      // let ws = createByObject(xw,"威少");
+      // console.log(ws);
+
+      // let arr = [];
+      // console.log(arr);
+      // console.log(arr.__proto__ === Object.prototype)
+
+
+      // let arr = [1,3,43];
+      // let res = arr.filter(item=>{
+      //   return item>39;
+      // })
+
+      // console.log(Array.prototype.filter);
+
+      // console.log(res);
+      // let btns = document.querySelectorAll('button');
+      // console.log(btns);
+      // btns =  Array.prototype.filter.call(btns,item=>{
+      //   console.log(item)
+      //   return item.hasAttribute('class');
+      // })
+      // console.log(btns)
+      // console.log(btns[0].innerHTML)
+
+      // let xw = {
+      //   name:'晓伟',
+      // };
+
+      // let ws = {
+      //   name:'威少',
+      //   show(){
+      //     console.log(this.name)
+      //   }
+      // }
+      // Object.setPrototypeOf(xw,ws);
+      // xw.show();
+
+      // let user = {
+      //   show(){
+      //     return this.name;
+      //   }
+      // }
+
+      // /**定义对象的原型，不能获取*/
+      // let xw = Object.create(user,{
+      //   name:{
+      //     value:'晓伟'
+      //   }
+      // })
+
+      // console.log(Object.getPrototypeOf(xw))
+
+      // let xjh = {name:'小家伙'};
+      // xjh.__proto__ = user;
+      // console.log(xjh.__proto__);
+
+      // /**这个属性并不是严格意义的属性，它是一个get和set，会对测试的值进行自动的判断*/
+      // /**给对象设置属性*/
+   
+
+    // let xw = {name:'晓伟'};
+    // xw.__proto__  = {
+    //   show(){
+    //     console.log(this.name);
+    //   }
+    // }
+    // xw.__proto__ = 99;
+    // xw.show()
+
+      // let hd = Object.create(null);
+      // console.log(hd);
+      // hd.__prot0__ = '威少';
+      // console.dir(hd.__proto__);
+
+      // let xw = {
+      //   action:{},
+      //   get proto(){
+      //     return this.action;
+      //   },
+      //   set proto(obj){
+      //     if(obj instanceof Object){
+      //       this.action = obj;
+      //     }
+      //   }
+      // };
+      // xw.proto = "abc";
+      // xw.proto = {a:1}
+      // console.log(xw.proto)
+
+
+      let user = {
+        show(){
+          return this.name;
+        }
+      }
+
+      /**定义对象的原型，不能获取*/      
+      let xw = Object.create(user,{
+        name:{
+          value:'晓伟'
+        }
+      })
+      console.log(xw.__proto__)
+      console.log(Object.getPrototypeOf(xw));
+
+  </script>
+</body>
+</html>

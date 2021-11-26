@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>换装</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #bigImg{
+      width: 300px;
+      height: 400px;
+      margin-left: 50px;
+    }
+    ul{
+      list-style: none;
+    }
+    ul li{
+      float: left;
+      margin-left: 20px;
+      margin-top: 20px;
+      border: 2px solid #fff;
+    }
+    ul li.active{
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+  <img src="./images/cloth1.jpg" id="bigImg" />
+  <br/>
+  <ul>
+    <li class="active">
+      <a>
+        <img src="./images/cloth1.jpg" class="smallImg" width="46" />
+      </a>
+    </li>
+    <li>
+      <a>
+        <img src="./images/colth2.jpg" class="smallImg" width="46"  />
+      </a>
+    </li>
+    <li>
+      <a>
+        <img src="./images/cloth3.jpg" class="smallImg" width="46"  />
+      </a>
+    </li>
+    <li>
+      <a>
+        <img src="./images/cloth4.jpg" class="smallImg" width="46"  />
+      </a>
+    </li>
+    <li>
+      <a>
+        <img src="./images/cloth5.jpg" class="smallImg" width="46"  />
+      </a>
+    </li>
+  </ul>
+
+  <script>
+    //获取源对象
+    var bigImg = document.getElementById('bigImg');
+    var smallImgs = document.getElementsByClassName('smallImg');
+
+    //事件处理
+    for(var i=0;i<smallImgs.length;i++){
+      smallImgs[i].onmouseover = function(){
+        for(var j=0;j<smallImgs.length;j++){
+          smallImgs[j].parentNode.parentNode.setAttribute('class','')
+        }
+        //注意父节点
+        this.parentNode.parentNode.setAttribute('class','active');
+        //修改大图的src属性值
+        var smallImgSrc = this.getAttribute('src');
+        console.log("smallImgSrc",smallImgSrc)
+        bigImg.setAttribute('src',smallImgSrc)
+      }
+    }
+    console.log(smallImgs)
+  </script>
+</body>
+</html>
